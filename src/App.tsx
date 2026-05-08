@@ -1,3 +1,4 @@
+import Footer from "./components/layout/Footer"
 import Navbar from "./components/layout/Navbar"
 import AboutMe from "./components/sections/AboutMe"
 import ContactMe from "./components/sections/ContactMe"
@@ -15,6 +16,7 @@ function App() {
       <Experience />
       <Skills />
       <ContactMe />
+      <Footer />
     </div>
   )
 }
