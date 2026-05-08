@@ -5,3 +5,8 @@
   --color-brand-secondary: #A855F7;
   --color-dark: #1a1a1a;
 }
+
+/* index.css */
+html {
+  scroll-padding-top: 5rem;
+}

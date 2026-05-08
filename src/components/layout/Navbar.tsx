@@ -12,11 +12,11 @@ function Navbar(){
         className='h-10 w-auto'
       />
       <ul className="hidden md:flex gap-10">
-        <li className="hover:text-brand-secondary cursor-pointer">About Me</li>
-        <li className="hover:text-brand-secondary cursor-pointer">Projects</li>
-        <li className="hover:text-brand-secondary cursor-pointer">Experience</li>
-        <li className="hover:text-brand-secondary cursor-pointer">Skills</li>
-        <li className="hover:text-brand-secondary cursor-pointer">Contact Me</li>
+        <li><a href="#about-me" className="hover:text-brand-secondary cursor-pointer">About Me</a></li>
+        <li><a href="#projects" className="hover:text-brand-secondary cursor-pointer">Projects</a></li>
+        <li><a href="#experience" className="hover:text-brand-secondary cursor-pointer">Experience</a></li>
+        <li><a href="#skills" className="hover:text-brand-secondary cursor-pointer">Skills</a></li>
+        <li><a href="#contact" className="hover:text-brand-secondary cursor-pointer">Contact Me</a></li>
       </ul>
 
       <button
@@ -28,35 +28,50 @@ function Navbar(){
 
       {isOpen && (
         <ul className="absolute top-full left-0 w-full bg-dark flex flex-col items-center gap-6 py-6 md:hidden shadow-lg border-t border-white/10">
-          <li
+          <li>
+            <a
+            href="#about-me"
             className="hover:text-brand-secondary cursor-pointer"
             onClick={() => setIsOpen(false)}
-          >
-            About Me
+            >
+              About Me
+            </a>
           </li>
-          <li
+          <li>
+            <a
+            href="#projects"
             className="hover:text-brand-secondary cursor-pointer"
             onClick={() => setIsOpen(false)}
-          >
-            Projects
+            >
+              Projects
+            </a>
           </li>
-          <li
+          <li>
+            <a
+            href="#experience"
             className="hover:text-brand-secondary cursor-pointer"
             onClick={() => setIsOpen(false)}
-          >
-            Experience
+            >
+              Experience
+            </a>
           </li>
-          <li
+          <li>
+            <a
+            href="#skills"
             className="hover:text-brand-secondary cursor-pointer"
             onClick={() => setIsOpen(false)}
-          >
-            Skills
+            >
+              Skills
+            </a>
           </li>
-          <li
+          <li>
+            <a
+            href="#contact"
             className="hover:text-brand-secondary cursor-pointer"
             onClick={() => setIsOpen(false)}
-          >
-            Contact Me
+            >
+              Contact Me
+            </a>
           </li>
         </ul>
       )}

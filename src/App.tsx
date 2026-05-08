@@ -10,12 +10,19 @@ function App() {
 
   return (
     <div className="min-h-screen bg-dark flex flex-col">
+      {/* Top Navbar */}
       <Navbar />
-      <AboutMe />
-      <Projects />
-      <Experience />
-      <Skills />
-      <ContactMe />
+
+      {/* Main Section */}
+      <main>
+        <AboutMe />
+        <Projects />
+        <Experience />
+        <Skills />
+        <ContactMe />
+      </main>
+
+      {/* Footer */}
       <Footer />
     </div>
   )
