@@ -1,5 +1,3 @@
-import { FaLinkedin } from "react-icons/fa6";
-
 function ContactMe() {
   return (
     <section id="contact" className="min-h-screen px-6 md:px-18 py-4">
