@@ -1,6 +1,6 @@
 import Footer from "./components/layout/Footer"
 import Navbar from "./components/layout/Navbar"
-import AboutMe from "./components/sections/AboutMe"
+import Home from "./components/sections/Home"
 import ContactMe from "./components/sections/ContactMe"
 import Experience from "./components/sections/Experience"
 import Projects from "./components/sections/Projects"
@@ -15,7 +15,7 @@ function App() {
 
       {/* Main Section */}
       <main>
-        <AboutMe />
+        <Home />
         <Projects />
         <Experience />
         <Skills />
