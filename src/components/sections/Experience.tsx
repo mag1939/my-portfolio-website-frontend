@@ -33,27 +33,37 @@ function Experience() {
       </h2>
 
       {/* Timeline */}
-      <div className="relative pl-8">
-        {/* Vertical line */}
-        <div className="absolute left-[6px] top-1 bottom-1 w-0.5 bg-gradient-to-b from-brand-secondary to-brand-secondary/10 rounded-full" />
-
+      <div className="flex flex-row items-start overflow-x-auto pb-8">
+       
         {experiences.map((exp) => (
-          <div key={exp.id} className="relative mb-10 last:mb-0">
-            {/* Dot */}
-            <div className="absolute -left-8 top-1 w-3.5 h-3.5 rounded-full bg-brand-secondary border-2 border-dark outline outline-2 outline-brand-secondary" />
+          <div key={exp.id} className="flex flex-col items-center min-w-[320px] max-w-[320px]">
+            {/* เส้น + dot */}
+            <div className="flex items-center w-full mb-4">
+              <div className="flex-1 h-0.5 bg-white/20" />
+              <div className={`w-3.5 h-3.5 rounded-full shrink-0 ${exp.period.includes("Present")
+                ? "bg-brand-secondary"
+                : "bg-white/20"
+              }`} />
+              <div className="flex-1 h-0.5 bg-white/20" />
+            </div>
 
-            <p className="text-xs font-medium tracking-[0.1em] uppercase text-brand-secondary mb-1">
-              {exp.period}
-            </p>
-            <p className="font-syne font-bold text-brand-primary text-lg mb-0.5">
-              {exp.role}
-            </p>
-            <p className="text-brand-primary/50 text-sm mb-2">
-              {exp.company}
-            </p>
-            <p className="text-brand-primary/55 text-sm leading-relaxed max-w-lg">
-              {exp.description}
-            </p>
+            {/* ข้อความ — จัดกึ่งกลาง */}
+            <div className="px-4">
+              <p className="text-xs font-medium tracking-[0.1em] uppercase text-brand-secondary mb-1 text-center">
+                {exp.period}
+              </p>
+              <p className="font-syne font-bold text-brand-primary text-lg mb-0.5 text-center">
+                {exp.role}
+              </p>
+              <p className="text-brand-primary/50 text-sm mb-2 text-center">
+                {exp.company}
+              </p>
+              <p className="text-brand-primary/55 text-sm leading-relaxed text-center">
+                {exp.description}
+              </p>
+            </div>
+            
+
           </div>
         ))}
       </div>
