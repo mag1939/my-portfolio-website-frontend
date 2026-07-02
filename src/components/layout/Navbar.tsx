@@ -8,7 +8,7 @@ function Navbar(){
       <div>
         <span className='font-extrabold text-2xl'>Mag</span><span className="text-brand-secondary font-extrabold text-2xl">.Dev</span>
       </div>
-      
+
       <ul className="hidden md:flex gap-10">
         <li><a href="#home" className="hover:text-brand-secondary cursor-pointer">Home</a></li>
         <li><a href="#projects" className="hover:text-brand-secondary cursor-pointer">Projects</a></li>
