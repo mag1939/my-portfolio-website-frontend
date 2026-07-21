@@ -10,30 +10,25 @@ type SkillGroup = {
 
 const skillGroups: SkillGroup[] = [
   {
-    category: "Frontend",
+    category: "Tech Stacks",
     skills: [
-      { name: "React",        logo: "/skills/react.png" },
-      { name: "TypeScript",   logo: "/skills/typescript.png" },
+      { name: "React", logo: "/skills/react.png" },
+      { name: "TypeScript", logo: "/skills/typescript.png" },
       { name: "Tailwind CSS", logo: "/skills/tailwindcss.svg" },
-      { name: "Vite",         logo: "/skills/vite.png" },
-      { name: "HTML",         logo: "/skills/html.png" },
-      { name: "CSS",          logo: "/skills/css.png" },
-    ],
-  },
-  {
-    category: "Backend",
-    skills: [
-      { name: "Node.js",    logo: "/skills/nodejs.svg" },
-      { name: "Express",    logo: "/skills/express.png" },
-      { name: "PostgreSQL", logo: "/skills/postgresql.png" },
+      { name: "Vite", logo: "/skills/vite.png" },
+      { name: "HTML", logo: "/skills/html.png" },
+      { name: "CSS", logo: "/skills/css.png" },
+      { name: "Node.js", logo: "/skills/nodejs.svg" },
+      { name: "Express", logo: "/skills/express.png" },
+      { name: "MongoDB", logo: "/skills/mongodb.svg" },
     ],
   },
   {
     category: "Tools",
     skills: [
-      { name: "Git",     logo: "/skills/git.png" },
-      { name: "GitHub",  logo: "/skills/github.png" },
-      { name: "Figma",   logo: "/skills/figma.png" },
+      { name: "Git", logo: "/skills/git.png" },
+      { name: "GitHub", logo: "/skills/github.png" },
+      { name: "Figma", logo: "/skills/figma.png" },
       { name: "VS Code", logo: "/skills/vscode.png" },
     ],
   },
