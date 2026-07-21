@@ -7,24 +7,29 @@ const experiences = [
     period: "2024 — Present",
     role: "Frontend Developer",
     company: "Company Name",
-    description:
-      "Built and maintained responsive web applications. Collaborated with designers and backend teams to deliver features on time.",
+    description: [
+      "Built and maintained responsive web applications",
+      "Collaborated with designers and backend teams",
+      "Improved performance of existing codebase"
+    ],
   },
   {
     id: 2,
     period: "2022 — 2024",
     role: "Junior Developer",
     company: "Another Company",
-    description:
+    description: [
       "Developed internal tools and dashboards. Learned React ecosystem and improved performance of existing codebase.",
+    ]
   },
   {
     id: 3,
     period: "2021 — 2022",
     role: "Intern Developer",
     company: "Startup Co.",
-    description:
+    description: [
       "Assisted in building landing pages and fixing UI bugs. First exposure to real-world production code.",
+    ],
   },
 ];
 
@@ -59,9 +64,13 @@ function Experience() {
                     {exp.period}
                   </p>
                 </div>
-                <p className="text-brand-primary/55 text-sm leading-relaxed grow">
-                  {exp.description}
-                </p>
+                <ul className="list-disc list-inside">
+                  {exp.description.map((point, i) => (
+                    <li key={i} className="text-brand-primary/55 text-sm">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
