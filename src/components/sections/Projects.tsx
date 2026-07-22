@@ -1,61 +1,33 @@
 import { FaGithub, FaLink } from "react-icons/fa6";
+import { useEffect, useState } from "react";
+import api from "../../api/axios.js";
 
-const projects = [
-  {
-    id: 1,
-    name: "Portfolio Website",
-    description: "Personal portfolio built with React, Tailwind v4 and Vite. Features smooth scroll and responsive layout.",
-    image: "/projects/placeholder.png", // เปลี่ยน path ให้ตรงกับรูปของคุณ
-    github: "https://github.com/yourusername/portfolio",
-    demoLink: "#",
-    skills: [
-      { name: "React"},
-      { name: "TypeScript" },
-      { name: "Tailwind CSS" },
-    ],
-  },
-  {
-    id: 2,
-    name: "Anime Tracker App",
-    description: "A web app to track anime watchlists, ratings, and discover new series with AniList API integration.",
-    image: "/projects/placeholder.png",
-    github: "https://github.com/yourusername/anime-tracker",
-    demoLink: "#",
-    skills: [
-      { name: "React"},
-      { name: "TypeScript" },
-      { name: "Tailwind CSS" },
-    ],
-  },
-  {
-    id: 3,
-    name: "E-Commerce Dashboard",
-    description: "Admin dashboard with real-time charts, order management, and inventory tracking built with React.",
-    image: "/projects/placeholder.png",
-    github: "https://github.com/yourusername/dashboard",
-    demoLink: "#",
-    skills: [
-      { name: "React"},
-      { name: "TypeScript" },
-      { name: "Tailwind CSS" },
-    ],
-  },
-  {
-    id: 4,
-    name: "Weather App",
-    description: "Minimal weather app using OpenWeather API with location search and 5-day forecast display. Minimal weather app using OpenWeather API with location search and 5-day forecast display.",
-    image: "/projects/placeholder.png",
-    github: "https://github.com/yourusername/weather-app",
-    demoLink: "#",
-    skills: [
-      { name: "React"},
-      { name: "TypeScript" },
-      { name: "Tailwind CSS" },
-    ],
+type Project = {
+    _id: string
+    name: string
+    description: string
+    githubLink: string
+    imageLink: string
+    demoLink?: string
+    skills: { name: string }[]
   }
-];
 
 function Projects() {
+  const [projects, setProjects] = useState<Project[]>([])
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await api.get("/projects")
+        setProjects(res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    fetchProjects()
+  }, [])
+
   return (
     <section id="projects" className="min-h-screen px-6 md:px-16 py-4">
       <h2 className="font-syne text-4xl font-extrabold text-brand-secondary mb-8">
@@ -66,14 +38,14 @@ function Projects() {
       <div className="flex flex-col md:flex-row gap-5 md:items-start md:overflow-x-auto pb-4 pt-5 scrollbar-thin scrollbar-thumb-brand-secondary scrollbar-track-white/5">
         {projects.map((project) => (
           <div
-            key={project.id}
-            className="w-full md:min-w-[300px] md:max-w-[300px] bg-white/5 border border-brand-secondary/20
-            rounded-2xl overflow-hidden flex-shrink-0 flex flex-col
+            key={project._id}
+            className="w-full md:min-w-75 md:max-w-75 bg-white/5 border border-brand-secondary/20
+            rounded-2xl overflow-hidden shrink-0 flex flex-col
             hover:border-brand-secondary hover:-translate-y-1 transition-all duration-200"
           >
             {/* Image */}
             <img
-              src={project.image}
+              src={project.imageLink}
               alt={project.name}
               className="w-full h-60 object-cover"
             />
@@ -95,7 +67,7 @@ function Projects() {
                 ))}
               </div>
 
-              <p className="text-brand-primary/55 text-sm leading-relaxed flex-grow">
+              <p className="text-brand-primary/55 text-sm leading-relaxed grow">
                 {project.description}
               </p>
 
@@ -103,7 +75,7 @@ function Projects() {
               <div className="flex gap-2 justify-end">
                 <div>
                   <a
-                    href={project.github}
+                    href={project.githubLink}
                     target="_blank"
                     className="flex items-center gap-2 border border-brand-primary/20 text-brand-primary/60 px-3 py-1.5 rounded-full text-xs font-medium hover:text-brand-primary hover:border-brand-primary/50 transition-all"
                   >
