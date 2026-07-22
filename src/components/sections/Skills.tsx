@@ -1,40 +1,28 @@
+import { useEffect, useState } from "react";
+import api from "../../api/axios.js";
+
 type Skill = {
-  name: string;
-  logo: string;
-};
-
-type SkillGroup = {
-  category: string;
-  skills: Skill[];
-};
-
-const skillGroups: SkillGroup[] = [
-  {
-    category: "Tech Stacks",
-    skills: [
-      { name: "React", logo: "/skills/react.png" },
-      { name: "TypeScript", logo: "/skills/typescript.png" },
-      { name: "Tailwind CSS", logo: "/skills/tailwindcss.svg" },
-      { name: "Vite", logo: "/skills/vite.png" },
-      { name: "HTML", logo: "/skills/html.png" },
-      { name: "CSS", logo: "/skills/css.png" },
-      { name: "Node.js", logo: "/skills/nodejs.svg" },
-      { name: "Express", logo: "/skills/express.png" },
-      { name: "MongoDB", logo: "/skills/mongodb.svg" },
-    ],
-  },
-  {
-    category: "Tools",
-    skills: [
-      { name: "Git", logo: "/skills/git.png" },
-      { name: "GitHub", logo: "/skills/github.png" },
-      { name: "Figma", logo: "/skills/figma.png" },
-      { name: "VS Code", logo: "/skills/vscode.png" },
-    ],
-  },
-];
+  _id: string
+  category: string
+  skills: { name: string, logo: string}[]
+}
 
 function Skills() {
+  const [skills, setSkills] = useState<Skill[]>([])
+
+  useEffect(() => {
+    const fetchSkills = async() => {
+      try {
+        const res = await api.get("/skills")
+        setSkills(res.data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    fetchSkills()
+  }, [])
+
   return (
     <section id="skills" className="min-h-screen px-6 md:px-16 py-4">
       <h2 className="font-syne text-4xl font-extrabold text-brand-secondary mb-10">
@@ -42,7 +30,7 @@ function Skills() {
       </h2>
 
       <div className="flex flex-col gap-8">
-        {skillGroups.map((group) => (
+        {skills.map((group) => (
           <div key={group.category}>
             <p className="text-xs font-medium tracking-[0.15em] uppercase text-brand-secondary mb-3">
               {group.category}
