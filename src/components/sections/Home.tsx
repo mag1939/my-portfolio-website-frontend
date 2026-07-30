@@ -63,7 +63,7 @@ function Home() {
 
         {/* Right — Photo */}
         <div className="relative shrink-0 mx-auto md:mx-0">
-          <div className="w-52 h-52 md:w-128 md:h-128 rounded-full p-1.5">
+          <div className="w-52 h-52 md:w-lg md:h-128 rounded-full p-1.5">
             <div className="w-full h-full rounded-full overflow-hidden bg-white/5
                             transition-transform duration-300 ease-in-out
                             hover:rotate-180
