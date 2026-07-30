@@ -1,6 +1,5 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa6";
 import { HiOutlineDocumentText } from "react-icons/hi2";
-import ProfileImg from '../../assets/towa_heh_v3.png'; // เปลี่ยน path ให้ตรงกับรูปของคุณ
 
 function Home() {
   return (
@@ -17,7 +16,7 @@ function Home() {
           </p>
 
           <h1 className="font-syne text-5xl md:text-6xl font-extrabold text-brand-primary leading-tight">
-            You can call me 
+            You can call me
           </h1>
           <h2 className="font-syne text-5xl md:text-6xl font-extrabold text-brand-secondary leading-tight mb-6">
             — Mag
@@ -32,7 +31,7 @@ function Home() {
           <div className="flex flex-wrap gap-3">
             {/* Resume */}
             <a
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/1uab0hpebUth7yYXyc3i7y7L9960r4qPW/view?usp=sharing"
               target="_blank"
               className="flex items-center gap-2 bg-brand-secondary text-dark px-6 py-2.5 rounded-full font-bold text-sm hover:opacity-80 transition-opacity"
             >
@@ -42,7 +41,7 @@ function Home() {
 
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/songsak-mag/"
               target="_blank"
               className="flex items-center gap-2 border border-brand-primary/30 text-brand-primary px-6 py-2.5 rounded-full font-medium text-sm hover:bg-brand-primary/10 hover:border-brand-primary/60 transition-all"
             >
@@ -52,7 +51,7 @@ function Home() {
 
             {/* GitHub */}
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/mag1939"
               target="_blank"
               className="flex items-center gap-2 border border-brand-primary/30 text-brand-primary px-6 py-2.5 rounded-full font-medium text-sm hover:bg-brand-primary/10 hover:border-brand-primary/60 transition-all"
             >
@@ -71,7 +70,7 @@ function Home() {
                             active:rotate-360
                             cursor-pointer">
               <img
-                src={ProfileImg}
+                src="/home_logo.png"
                 alt="Songsak Thawaro"
                 className="w-full h-full object-cover scale-125"
               />
