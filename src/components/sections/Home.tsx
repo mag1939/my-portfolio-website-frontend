@@ -25,7 +25,7 @@ function Home() {
 
           <p className="text-brand-primary/60 text-base leading-relaxed max-w-md mb-8">
             {/* เพิ่ม bio ของคุณตรงนี้ */}
-            A developer who loves anime, Japanese culture.
+            This is my internet little corner, I like coding, anime and japanese culture.
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -66,9 +66,12 @@ function Home() {
           <div className="w-52 h-52 md:w-lg md:h-128 rounded-full p-1.5">
             <div className="w-full h-full rounded-full overflow-hidden bg-white/5
                             transition-transform duration-300 ease-in-out
-                            hover:rotate-180
-                            active:rotate-360
-                            cursor-pointer">
+                            hover:rotate-360
+                            active:rotate-720
+                            cursor-pointer"
+                  onContextMenu={(e) => e.preventDefault()}
+                  onTouchStart={(e) => e.preventDefault()}
+            >
               <img
                 src="/home_logo.png"
                 alt="Songsak Thawaro"

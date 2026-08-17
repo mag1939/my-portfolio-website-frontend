@@ -35,11 +35,11 @@ function Projects() {
       </h2>
 
       {/* Horizontal scroll row */}
-      <div className="flex flex-col md:flex-row gap-5 md:items-start md:overflow-x-auto pb-4 pt-5 scrollbar-thin scrollbar-thumb-brand-secondary scrollbar-track-white/5">
+      <div className="flex flex-row gap-5 items-start overflow-x-auto pb-4 pt-1 pl-1 my-scroll">
         {projects.map((project) => (
           <div
             key={project._id}
-            className="w-full md:min-w-75 md:max-w-75 bg-white/5 border border-brand-secondary/20
+            className="min-w-72 max-w-72 bg-white/5 border border-brand-secondary/20
             rounded-2xl overflow-hidden shrink-0 flex flex-col
             hover:border-brand-secondary hover:-translate-y-1 transition-all duration-200"
           >

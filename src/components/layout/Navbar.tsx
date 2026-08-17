@@ -6,7 +6,7 @@ function Navbar(){
   return (
     <nav className="flex justify-between items-center gap-12 px-6 md:px-16 py-4 text-brand-primary bg-dark/80 backdrop-blur-md sticky top-0 z-50">
       <div>
-        <span className='font-extrabold text-2xl'>Mag</span><span className="text-brand-secondary font-extrabold text-2xl">.Dev</span>
+        <span className='font-extrabold text-2xl'>Mag</span><span className="text-brand-secondary font-extrabold text-2xl">1939</span>
       </div>
 
       <ul className="hidden md:flex gap-10">
