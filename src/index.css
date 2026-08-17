@@ -10,3 +10,17 @@
 html {
   scroll-padding-top: 5rem;
 }
+
+/* Custom scrollbar */
+.my-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.my-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.my-scroll::-webkit-scrollbar-thumb {
+  background: #A855F7;
+  border-radius: 999px;
+}

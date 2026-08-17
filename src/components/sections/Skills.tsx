@@ -35,19 +35,19 @@ function Skills() {
             <p className="text-xs font-medium tracking-[0.15em] uppercase text-brand-secondary mb-3">
               {group.category}
             </p>
-            <div className="flex flex-wrap gap-5">
+           <div className="my-scroll flex gap-3 overflow-x-auto md:flex-wrap md:overflow-x-visible pb-3 pt-1 pl-2">
               {group.skills.map(({ name, logo }) => (
                 <span
                   key={name}
-                  className="flex items-center gap-2 bg-white/5 border border-brand-secondary/20 text-brand-primary/80 px-6 py-3 rounded-full text-sm font-medium 
+                  className="flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 shrink-0 bg-white/5 border border-brand-secondary/20 text-brand-primary/80 rounded-full text-sm font-medium 
                           hover:border-brand-secondary hover:text-brand-primary transition-all duration-200 hover:scale-110 active:scale-100 cursor-default"
                 >
                   <img
                     src={logo}
                     alt={name}
-                    width={48}
-                    height={48}
-                    className="object-contain"
+                    width={24}
+                    height={24}
+                    className="md:w-10 md:h-10 object-contain"
                   />
                   {name}
                 </span>
