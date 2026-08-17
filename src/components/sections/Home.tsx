@@ -66,9 +66,8 @@ function Home() {
           <div className="w-52 h-52 md:w-lg md:h-128 rounded-full p-1.5">
             <div className="w-full h-full rounded-full overflow-hidden bg-white/5
                             transition-transform duration-300 ease-in-out
-                            hover:rotate-360
-                            active:rotate-720
-                            cursor-pointer"
+                            hover:rotate-360 active:rotate-720
+                            select-none cursor-pointer"
                   onContextMenu={(e) => e.preventDefault()}
                   onTouchStart={(e) => e.preventDefault()}
             >
@@ -76,6 +75,7 @@ function Home() {
                 src="/home_logo.png"
                 alt="Songsak Thawaro"
                 className="w-full h-full object-cover scale-125"
+                draggable={false}
               />
             </div>
           </div>
