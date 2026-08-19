@@ -9,14 +9,20 @@ type Skill = {
 
 function Skills() {
   const [skills, setSkills] = useState<Skill[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchSkills = async() => {
       try {
+        setIsLoading(true)
         const res = await api.get("/skills")
         setSkills(res.data)
       } catch (error) {
+        setError("Loading Failed, please try again.")
         console.error(error)
+      } finally {
+        setIsLoading(false)
       }
     }
 
@@ -29,7 +35,11 @@ function Skills() {
         Skills
       </h2>
 
-      <div className="flex flex-col gap-8">
+      {isLoading
+        ? <p className="text-brand-primary/50">Loading...</p>
+        : error
+          ? <p className="text-red-400">{error}</p>
+          : <div className="flex flex-col gap-8">
         {skills.map((group) => (
           <div key={group.category}>
             <p className="text-xs font-medium tracking-[0.15em] uppercase text-brand-secondary mb-3">
@@ -55,7 +65,8 @@ function Skills() {
             </div>
           </div>
         ))}
-      </div>
+            </div>
+      }
     </section>
   );
 }
