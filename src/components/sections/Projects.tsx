@@ -41,7 +41,7 @@ function Projects() {
       </h2>
 
       {isLoading
-        ? <p className="text-brand-primary/50">Loading...</p>
+        ? <p className="text-brand-primary/50">Waking up my backend, please wait... 🥱</p>
         : error
           ? <p className="text-red-400">{error}</p>
           : <div className="flex flex-row gap-5 items-start overflow-x-auto pb-4 pt-1 pl-1 my-scroll">
