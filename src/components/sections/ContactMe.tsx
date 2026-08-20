@@ -17,7 +17,7 @@ function ContactMe() {
     setFormErrors(null)
     setStatus(null)
     if (!formData.subject || !formData.from_name || !formData.from_email || !formData.message) {
-      setFormErrors("Please fill out all the fields before sending the Message!")
+      setFormErrors("Please fill out all the fields and email field with email address, before sending the Message!")
       return
     }
     setIsSending(true)
