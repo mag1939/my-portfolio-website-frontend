@@ -24,7 +24,7 @@ function Home() {
 
 
           <p className="text-brand-primary/60 text-base leading-relaxed max-w-md mb-8">
-            {/* เพิ่ม bio ของคุณตรงนี้ */}
+            {/* bio */}
             This is my internet little corner, I like coding, anime and japanese culture.
           </p>
 
@@ -33,7 +33,7 @@ function Home() {
             <a
               href="https://drive.google.com/file/d/1uab0hpebUth7yYXyc3i7y7L9960r4qPW/view?usp=sharing"
               target="_blank"
-              className="flex items-center gap-2 bg-brand-secondary text-dark px-6 py-2.5 rounded-full font-bold text-sm hover:opacity-80 transition-opacity"
+              className="flex items-center gap-2 bg-brand-secondary text-dark px-6 py-2.5 rounded-full font-bold text-sm hover:opacity-80 transition-opacity active:scale-95 active:translate-y-0.5"
             >
               <HiOutlineDocumentText size={18} />
               Download Resume
@@ -43,7 +43,7 @@ function Home() {
             <a
               href="https://www.linkedin.com/in/songsak-mag/"
               target="_blank"
-              className="flex items-center gap-2 border border-brand-primary/30 text-brand-primary px-6 py-2.5 rounded-full font-medium text-sm hover:bg-brand-primary/10 hover:border-brand-primary/60 transition-all"
+              className="flex items-center gap-2 border border-brand-primary/30 text-brand-primary px-6 py-2.5 rounded-full font-medium text-sm hover:bg-brand-primary/10 hover:border-brand-primary/60 transition-all active:scale-95 active:translate-y-0.5"
             >
               <FaLinkedin size={16} />
               LinkedIn
@@ -53,7 +53,7 @@ function Home() {
             <a
               href="https://github.com/mag1939"
               target="_blank"
-              className="flex items-center gap-2 border border-brand-primary/30 text-brand-primary px-6 py-2.5 rounded-full font-medium text-sm hover:bg-brand-primary/10 hover:border-brand-primary/60 transition-all"
+              className="flex items-center gap-2 border border-brand-primary/30 text-brand-primary px-6 py-2.5 rounded-full font-medium text-sm hover:bg-brand-primary/10 hover:border-brand-primary/60 transition-all active:scale-95 active:translate-y-0.5"
             >
               <FaGithub size={16} />
               GitHub
@@ -67,7 +67,8 @@ function Home() {
             <div className="w-full h-full rounded-full overflow-hidden bg-white/5
                             transition-transform duration-300 ease-in-out
                             hover:rotate-360 active:rotate-720
-                            select-none cursor-pointer"
+                            select-none cursor-pointer
+                            active:scale-95 active:translate-y-0.5"
                   onContextMenu={(e) => e.preventDefault()}
                   onTouchStart={(e) => e.preventDefault()}
             >

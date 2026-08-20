@@ -5,6 +5,7 @@ import { useState } from "react";
 function ContactMe() {
   const [isSending, setIsSending] = useState(false)
   const [status, setStatus] = useState<"success" | "error" | null>(null)
+  const [formErrors, setFormErrors] = useState<string | null>(null)
   const [formData, setFormData] = useState({
     from_name: "",
     from_email: "",
@@ -13,6 +14,12 @@ function ContactMe() {
   })
 
   const handleSubmit = async () => {
+    setFormErrors(null)
+    setStatus(null)
+    if (!formData.subject || !formData.from_name || !formData.from_email || !formData.message) {
+      setFormErrors("Please fill out all the fields before sending the Message!")
+      return
+    }
     setIsSending(true)
     try {
       await emailjs.send(
@@ -59,28 +66,27 @@ function ContactMe() {
             <input
               value={formData.subject}
               onChange={(e) => setFormData({ ...formData, subject: e.target.value})}
-              required type="text"
+              type="text"
               placeholder="Subject"
               className="w-full bg-white/5 border border-brand-secondary/20 rounded-xl px-4 py-3 text-sm text-brand-primary placeholder:text-brand-primary/25 outline-none focus:border-brand-secondary transition-colors"
             />
             <input
               value={formData.from_name}
               onChange={(e) => setFormData({ ...formData, from_name: e.target.value})}
-              required type="text"
+              type="text"
               placeholder="Your name"
               className="w-full bg-white/5 border border-brand-secondary/20 rounded-xl px-4 py-3 text-sm text-brand-primary placeholder:text-brand-primary/25 outline-none focus:border-brand-secondary transition-colors"
             />
             <input
               value={formData.from_email}
               onChange={(e) => setFormData({ ...formData, from_email: e.target.value})}
-              required type="email"
+              type="email"
               placeholder="Your email"
               className="w-full bg-white/5 border border-brand-secondary/20 rounded-xl px-4 py-3 text-sm text-brand-primary placeholder:text-brand-primary/25 outline-none focus:border-brand-secondary transition-colors"
             />
             <textarea
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value})}
-              required
               placeholder="Your message"
               rows={5}
               className="w-full bg-white/5 border border-brand-secondary/20 rounded-xl px-4 py-3 text-sm text-brand-primary placeholder:text-brand-primary/25 outline-none focus:border-brand-secondary transition-colors resize-y"
@@ -91,7 +97,7 @@ function ContactMe() {
               <button
                 type="submit"
                 disabled={isSending}
-                className={`text-dark px-6 py-2.5 rounded-full font-bold text-sm
+                className={`text-dark px-6 py-2.5 rounded-full font-bold text-sm active:scale-95 active:translate-y-0.5 transition-transform
                   ${isSending ?
                     "bg-gray-500 cursor-not-allowed" :
                     "bg-brand-secondary hover:opacity-80 transition-opacity"}`}
@@ -107,6 +113,12 @@ function ContactMe() {
                   ? "Sending successful!~"
                   : "Something went wrong. Please try again or reach me through other channels."}
 
+                </div>
+              )}
+
+              {formErrors && (
+                <div className="px-6 py-2.5 text-sm font-medium text-red-400">
+                  {formErrors}
                 </div>
               )}
 

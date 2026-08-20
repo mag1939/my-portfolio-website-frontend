@@ -86,7 +86,7 @@ function Projects() {
                         <a
                           href={project.githubLink}
                           target="_blank"
-                          className="flex items-center gap-2 border border-brand-primary/20 text-brand-primary/60 px-3 py-1.5 rounded-full text-xs font-medium hover:text-brand-primary hover:border-brand-primary/50 transition-all"
+                          className="flex items-center gap-2 border border-brand-primary/20 text-brand-primary/60 px-3 py-1.5 rounded-full text-xs font-medium hover:text-brand-primary hover:border-brand-primary/50 transition-all active:scale-95 active:translate-y-0.5"
                         >
                           <FaGithub size={13} />
                           GitHub
@@ -96,7 +96,7 @@ function Projects() {
                         <a
                           href={project.demoLink}
                           target="_blank"
-                          className="flex items-center gap-2 border bg-brand-secondary border-brand-primary/20 text-black px-3 py-1.5 rounded-full text-xs font-medium hover:text-brand-primary hover:border-brand-secondary transition-all"
+                          className="flex items-center gap-2 border bg-brand-secondary border-brand-primary/20 text-black px-3 py-1.5 rounded-full text-xs font-medium hover:text-brand-primary hover:border-brand-secondary transition-all active:scale-95 active:translate-y-0.5"
                         >
                           <FaLink size={13} />
                           Demo
